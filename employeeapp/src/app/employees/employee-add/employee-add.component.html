@@ -1,0 +1,280 @@
+<h2>Add Employee</h2>
+<br />
+
+<div class="container">
+  <div class="col-md-12">
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+      <div class="panel panel-default" style="margin-left:20px;margin-right:20px;">
+        <div class="panel-heading">
+          <h3 class="panel-title">Employee Account Information</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-12">
+
+            <div class="form-horizontal">
+              <hr />
+              <!-- @Html.ValidationSummary(true, "", new { @class = "text-danger" }) -->
+              <div class="form-group">
+                <label for="userName" class="control-label col-md-2">User Name</label>
+                <div class="col-md-10">
+                  <input type="text" formControlName="userName" class="form-control" />
+
+                  <div *ngIf="employeeForm.userName.dirty || employeeForm.userName.touched" class="text-danger">
+                    <div *ngIf="userName.errors.required">
+                      the userName field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="control-label col-md-2">Password</label>
+                <div class="col-md-10">
+                  <input type="text" formControlName="description" class="form-control" />
+
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                    <div *ngIf="password.errors.required">
+                      the password field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="isActive" class="control-label col-md-2">Is Active</label>
+                <div class="col-md-10">
+
+                  <input type="radio" formControlName="isActive" style="margin-top: 10px !important;" /> Yes
+                  &nbsp;&nbsp;
+                  <input type="radio" formControlName="isActive" style="margin-top: 10px !important;" /> No
+
+                  <div *ngIf="isActive.invalid && (isActive.dirty || isActive.touched)" class="text-danger">
+                    <div *ngIf="isActive.errors.required">
+                      the isActive field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="siteLink" class="control-label col-md-2">Site Link</label>
+                <div class="col-md-10">
+                  <input type="text" formControlName="siteLink" class="form-control" />
+
+                  <div *ngIf="siteLink.invalid && (siteLink.dirty || siteLink.touched)" class="text-danger">
+                    <div *ngIf="siteLink.errors.required">
+                      the siteLink field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="panel panel-default" style="margin-left:20px;margin-right:20px;">
+        <div class="panel-heading">
+          <h3 class="panel-title">Employee Profile Information</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-12">
+
+            <div class="form-horizontal">
+              <hr />
+              <!-- @Html.ValidationSummary(true, "", new { @class = "text-danger" }) -->
+              <div class="form-group">
+                <label for="firstName" class="control-label col-md-2">First Name</label>
+                <div class="col-md-10">
+                  <input type="text" formControlName="firstName" class="form-control" />
+
+                  <div *ngIf="employeeForm.firstName.dirty || employeeForm.firstName.touched" class="text-danger">
+                    <div *ngIf="firstName.errors.required">
+                      the firstName field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="middleName" class="control-label col-md-2">Middle Name</label>
+                <div class="col-md-10">
+                  <input type="text" formControlName="middleName" class="form-control" />
+
+                  <div *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)" class="text-danger">
+                    <div *ngIf="middleName.errors.required">
+                      the middleName field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="lastName" class="control-label col-md-2">Last Name</label>
+                <div class="col-md-10">
+                  <input type="text" formControlName="lastName" class="form-control" />
+
+                  <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="text-danger">
+                    <div *ngIf="lastName.errors.required">
+                      the lastName field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="emailAddress" class="control-label col-md-2">Email Address</label>
+                <div class="col-md-10">
+                  <input type="email" formControlName="emailAddress" class="form-control" />
+
+                  <div *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)" class="text-danger">
+                    <div *ngIf="emailAddress.errors.required">
+                      the emailAddress field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="location" class="control-label col-md-2">Location</label>
+                <div class="col-md-10">
+                  <input type="text" formControlName="location" class="form-control" />
+
+                  <div *ngIf="location.invalid && (location.dirty || location.touched)" class="text-danger">
+                    <div *ngIf="location.errors.required">
+                      the location field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="teams" class="control-label col-md-2">Team</label>
+                <div class="col-md-10">
+
+                  <select formControlName="teams" class="form-control">
+                    <option>Please select a Team</option>
+                  </select>
+
+                  <div *ngIf="teams.invalid && (teams.dirty || teams.touched)" class="text-danger">
+                    <div *ngIf="teams.errors.required">
+                      the team Name field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="tiers" class="control-label col-md-2">Tier</label>
+                <div class="col-md-10">
+
+                  <select formControlName="tiers" class="form-control">
+                    <option>Please select a Tier</option>
+                  </select>
+
+                  <div *ngIf="tiers.invalid && (tiers.dirty || tiers.touched)" class="text-danger">
+                    <div *ngIf="tiers.errors.required">
+                      the tier Name field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="clients" class="control-label col-md-2">Company</label>
+                <div class="col-md-10">
+
+                  <select formControlName="Company" class="form-control">
+                    <option>Please select a Company</option>
+                  </select>
+
+                  <div *ngIf="clients.invalid && (clients.dirty || clients.touched)" class="text-danger">
+                    <div *ngIf="clients.errors.required">
+                      the client Name field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="panel panel-default" style="margin-left:20px;margin-right:20px;">
+        <div class="panel-heading">
+          <h3 class="panel-title">Employee Access Information</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-12">
+
+            <div class="form-horizontal">
+              <hr />
+
+              <div class="form-group">
+                <label for="menus" class="control-label col-md-2">List of Menus</label>
+                <div class="col-md-10">
+                  
+                  <div style="margin-top: 8px;color: red;" *ngIf="!menuList.length">
+                    <b>-- No Menu has been set --</b>
+                  </div>
+                </div>
+              </div>
+
+              <!-- @Html.ValidationSummary(true, "", new { @class = "text-danger" }) -->
+              <div class="form-group" style="margin-top: 50px;margin-bottom: 25px">
+                <label for="menus" class="control-label col-md-2"></label>
+                <div class="col-md-3">
+
+
+                  <select formControlName="menus" class="form-control">
+                    <option>Please select a Menu</option>
+                  </select>
+
+                  <div *ngIf="employeeForm.menus.dirty || employeeForm.menus.touched" class="text-danger">
+                    <div *ngIf="menus.errors.required">
+                      the menus field is required.
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-7" style="padding-left: 0px !important;">
+                  <button class="btn btn-primary btn-sm">Set Access</button>
+                </div>
+
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <input type="submit" value="Create" class="btn btn-success" />
+          &nbsp;<a routerLink="/" class="btn btn-danger">Cancel</a>
+        </div>
+      </div>
+
+      <br /><br /><br /><br />
+
+    </form>
+
+  </div>
+</div>

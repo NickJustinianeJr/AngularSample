@@ -1,0 +1,76 @@
+<h2>List of Roles</h2>
+
+<br /><br /><br />
+
+<!-- <a routerLink="/Employees/AddEmployee" class="btn btn-primary btn-sm">Add Employee</a>
+<br /><br />
+
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Site Link</th>
+      <th>Is Active</th>
+      <th>Full Name</th>
+      <th>Email Address</th>
+      <th>Location</th>
+      <th>Tier</th>
+      <th>Team</th>
+      <th>Company</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="employees.length">
+    <tr *ngFor="let employee of employees">
+      <td>
+        <a routerLink="/Employees/EmployeeDetails/{{employee.userAccount.userId}}">{{ employee.userAccount.userName }}</a>
+      </td>
+      <td>{{ employee.userAccount.siteLink }}</td>
+      <td>{{ employee.userAccount.isActive }}</td>
+      <td>{{ employee.userProfile.firstName }} {{ employee.userProfile.middlename }} {{ employee.userProfile.lastname }}</td>
+      <td>{{ employee.userProfile.emailAddress }}</td>
+      <td>{{ employee.userProfile.location }}</td>
+      <td>{{ employee.userProfile.tiers.tierName }}</td>
+      <td>{{ employee.userProfile.teams.teamName }}</td>
+      <td>{{ employee.userProfile.clients.clientName }}</td>
+      <td>
+        <a routerLink="/Employees/EditEmployee/{{employee.userId}}" class="btn btn-info btn-sm">Edit</a> | 
+         | 
+        <a routerLink="/Employees/DeleteEmployee/{{employee.userId}}" class="btn btn-info btn-sm">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+
+<a routerLink="/Roles/AddRole" class="btn btn-primary btn-sm">Add Role</a>
+<br /><br />
+
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Leadership</th>
+      <th>Client Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="roles.length">
+    <tr *ngFor="let role of roles">
+      <td>
+        <a routerLink="/Roles/RoleDetails/{{role.roleId}}">{{ role.name }}</a>
+      </td>
+      <td>{{ role.name }}</td>
+      <td>{{ role.description }}</td>
+      <td>{{ role.leadership }}</td>
+      <td>{{ role.clientName }}</td>
+      
+      <td>
+        <a routerLink="/Roles/EditRole/{{role.roleId}}" class="btn btn-info btn-sm">Edit</a> | 
+         | 
+        <a routerLink="/Roles/DeleteRole/{{role.roleId}}" class="btn btn-info btn-sm">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
